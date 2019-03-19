@@ -11,6 +11,12 @@
 1. docker-compose down 可以销毁已经起来的容器
 1. docker-compose build 会重新编译镜像文件.
 
+如果不需要起postgresq, 请把docker-compose.yml里面的以下内容删除:
+
+~~~
+depends_on:
+      - db
+~~~
 
 # todo
 1. 用thor自动拷贝生成本docker环境
