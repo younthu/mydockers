@@ -1,5 +1,15 @@
 # 关于本docker
-本docker是一个rails集成环境, 集成rails + puma + postgres + nginx
+本docker是一个rails集成环境, 集成rails + puma + postgres + nginx. 
+
+默认是ruby 2.5.5
+
+
+# 使用
+
+1. 把docker-compose.yml和docker/目录拷贝到rails跟目录下面去
+1. docker-compose up -d app # 网站会在3000端口起来，环境为production
+1. docker-compose down 可以销毁已经起来的容器
+1. docker-compose build 会重新编译镜像文件.
 
 
 # todo
