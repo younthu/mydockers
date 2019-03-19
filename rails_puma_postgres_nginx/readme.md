@@ -7,8 +7,8 @@
 
 # 
 # 文件结构
-Create docker folder in app root 
 
+<pre>
 -app_name
   -app
   -db
@@ -16,12 +16,13 @@ Create docker folder in app root
     -database.yml
   ...
   -docker
-    -app
+    -app  # docker for rails app
       -DockerFile
-    -web
+    -web  # docker for nginx
       -DockerFile
       -nginx.conf
   -docker-compose.yml
+ </pre>
 
 
 1. [参考](https://itnext.io/docker-rails-puma-nginx-postgres-999cd8866b18)
