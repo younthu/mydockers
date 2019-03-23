@@ -58,5 +58,8 @@ depends_on:
       ~~~
       
    或者有个更复杂先进的key管理方法: https://waiyanyoon.com/deploying-rails-5-2-applications-with-encrypted-credentials-using-capistrano/
+1. ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.):
+    运行命令: `RAILS_ENV=production bundle exec rails assets:precompile`
+      
 # 参考
 1. [参考](https://itnext.io/docker-rails-puma-nginx-postgres-999cd8866b18)
