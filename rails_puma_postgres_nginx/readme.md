@@ -47,5 +47,16 @@ depends_on:
 ## 容器退出的问题
 生产环境下可能会遇到`docker-compose up -d app`命令跑了以后容器马上退出了，这个时候可以通过`docker logs xxxxxxx`来查看容器日志，判断问题所在.
 
-
+1. ! Unable to load application: ArgumentError: Missing `secret_key_base` for 'production' environment, set this string with `rails credentials:edit`
+   解决方法: 
+   1. rake secret 生成密码
+   1. 把上面生成的内容放到config/secrets.yml里面去
+      ~~~
+      # config/secrets.yml
+      production:
+         secret_key_base: <上面生成的key>
+      ~~~
+      
+   或者有个更复杂先进的key管理方法: https://waiyanyoon.com/deploying-rails-5-2-applications-with-encrypted-credentials-using-capistrano/
+# 参考
 1. [参考](https://itnext.io/docker-rails-puma-nginx-postgres-999cd8866b18)
