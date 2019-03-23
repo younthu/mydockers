@@ -42,5 +42,10 @@ depends_on:
   -docker-compose.yml
  </pre>
 
+# 问题解决
+
+## 容器退出的问题
+生产环境下可能会遇到`docker-compose up -d app`命令跑了以后容器马上退出了，这个时候可以通过`docker logs xxxxxxx`来查看容器日志，判断问题所在.
+
 
 1. [参考](https://itnext.io/docker-rails-puma-nginx-postgres-999cd8866b18)
