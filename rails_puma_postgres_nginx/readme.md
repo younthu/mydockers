@@ -56,6 +56,9 @@ depends_on:
       production:
          secret_key_base: <上面生成的key>
       ~~~
+
+    或者在Application.rb里面写死secret: `config.secret_key = 'f8fd45107e3f1cff9225a9250ebad5c63110f9888dc77bd5186f0870c003aff3b7aee4695387191cbc8da55d71b4f47c1f99b4d52cb2eb92c4f6a3523bd42812'
+`
       
    或者有个更复杂先进的key管理方法: https://waiyanyoon.com/deploying-rails-5-2-applications-with-encrypted-credentials-using-capistrano/
 1. ActionView::Template::Error (The asset "application.css" is not present in the asset pipeline.):
@@ -64,3 +67,4 @@ depends_on:
       
 # 参考
 1. [参考](https://itnext.io/docker-rails-puma-nginx-postgres-999cd8866b18)
+
