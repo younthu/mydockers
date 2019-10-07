@@ -25,3 +25,14 @@ docker run -it --name samba -p 139:139 -p 445:445 -v $PWD/samba_shared:/shared -
 
 注意: 
 要在host下运行 `sudo chmod 777 samba_share/users` 命令，否则samba服务器会 认为users目录是不可写的，配置了samba权限也没有用, 这个问题坑了我几个小时时间。
+
+## ftp
+
+下面的命令会创建一个fp目录
+~~~
+docker run -d -v $PWD:/home/vsftpd \
+-p 20:20 -p 21:21 -p 21100-21110:21100-21110 \
+-e FTP_USER=fp -e FTP_PASS=fpftppassword \
+-e PASV_ADDRESS=127.0.0.1 -e PASV_MIN_PORT=21100 -e PASV_MAX_PORT=21110 \
+--name vsftpd --restart=always fauria/vsftpd
+~~~
