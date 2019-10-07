@@ -6,15 +6,18 @@
 利用docker搭建samba服务器步骤:
 
 1. 先运行docker 创建samba服务器容器
+~~~
 docker run -it --name samba -p 139:139 -p 445:445 -v $PWD/samba_shared:/shared -d dperson/samba -u 'dg;dg123' -u 'admin;admin_123' -s 'public;/shared/public' -s 'users;/shared/users;yes;no;yes;all;all;all'
+~~~
 
 或者用下面这种展开后的命令:
-
+~~~
 docker run -it --name samba -p 139:139 -p 445:445 -v $PWD/samba_shared:/shared -d dperson/samba \
 -u 'dg; password’ \   #创建用户dg, 密码password
 -u 'admin; password’ \  #创建用户admin, 密码password
 -s 'public;/shared/public'   # 创建共享只读目录public,
 -s 'users;/shared/users;yes;no;yes;all;all;all'   #创建共享可读可写目录
+~~~
 
 2. 给samba_share/users给与可写权限. host中运行`sudo chmod 777 samba_share/users`即可， 我们只需要users目录可写
 
